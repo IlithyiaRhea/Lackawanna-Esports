@@ -93,8 +93,8 @@
   }
   table.standings td{padding:8px 6px; border-bottom:1px solid #262b34;}
   table.standings td.team{font-weight:600;}
-  table.standings td[contenteditable], th[contenteditable]{outline-offset:3px;}
-  table.standings td[contenteditable]:hover{background:#242a33; cursor:text;}
+  table.standings td[], th[]{outline-offset:3px;}
+  table.standings td[]:hover{background:#242a33; cursor:text;}
   table.standings tr:last-child td{border-bottom:none;}
   .seedcol{color:var(--text-dim); width:26px;}
 
@@ -163,6 +163,11 @@
   }
   footer b{color:var(--text);}
 
+  .data-error{
+    background:#3a1414; color:#ffb4b4; border:1px solid #7a2f2f;
+    padding:14px 18px; margin-bottom:24px; font-size:0.88rem; line-height:1.5;
+  }
+
   /* ---- Live stream ---- */
   .stream-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
   @media(max-width:820px){.stream-grid{grid-template-columns:1fr;}}
@@ -213,7 +218,7 @@
     <div class="section-head">
       <span class="tag">DAY 1</span>
       <h2>Group Stage — Round Robin</h2>
-      <span class="note">All matches Best of 1 ·</span>
+      <span class="note">All matches Best of 1 · click any name or score to edit</span>
     </div>
 
     <div class="groups">
@@ -221,11 +226,11 @@
         <h3><span class="dot"></span>Group A</h3>
         <table class="standings">
           <tr><th></th><th>Team</th><th>W</th><th>L</th><th>RD</th></tr>
-          <tr><td class="seedcol">A1</td><td class="team" contenteditable>Team A1</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">A2</td><td class="team" contenteditable>Team A2</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">A3</td><td class="team" contenteditable>Team A3</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">A4</td><td class="team" contenteditable>Team A4</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">A5</td><td class="team" contenteditable>Team A5</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
+          <tr data-team-id="A1"><td class="seedcol">A1</td><td class="team">Team A1</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="A2"><td class="seedcol">A2</td><td class="team">Team A2</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="A3"><td class="seedcol">A3</td><td class="team">Team A3</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="A4"><td class="seedcol">A4</td><td class="team">Team A4</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="A5"><td class="seedcol">A5</td><td class="team">Team A5</td><td>0</td><td>0</td><td>0</td></tr>
         </table>
       </div>
 
@@ -233,11 +238,11 @@
         <h3><span class="dot"></span>Group B</h3>
         <table class="standings">
           <tr><th></th><th>Team</th><th>W</th><th>L</th><th>RD</th></tr>
-          <tr><td class="seedcol">B1</td><td class="team" contenteditable>Team B1</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">B2</td><td class="team" contenteditable>Team B2</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">B3</td><td class="team" contenteditable>Team B3</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">B4</td><td class="team" contenteditable>Team B4</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
-          <tr><td class="seedcol">B5</td><td class="team" contenteditable>Team B5</td><td contenteditable>0</td><td contenteditable>0</td><td contenteditable>0</td></tr>
+          <tr data-team-id="B1"><td class="seedcol">B1</td><td class="team">Team B1</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="B2"><td class="seedcol">B2</td><td class="team">Team B2</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="B3"><td class="seedcol">B3</td><td class="team">Team B3</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="B4"><td class="seedcol">B4</td><td class="team">Team B4</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr data-team-id="B5"><td class="seedcol">B5</td><td class="team">Team B5</td><td>0</td><td>0</td><td>0</td></tr>
         </table>
       </div>
     </div>
@@ -300,23 +305,23 @@
       <div class="col qf-col">
         <div class="match">
           <span class="label">QF1</span>
-          <div class="slot"><span class="seed">1</span><span class="team" contenteditable>Group A — 1st</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed">8</span><span class="team" contenteditable>Group B — 4th</span><input class="score" contenteditable></div>
+          <div class="slot" data-seed="1"><span class="seed">1</span><span class="team">Group A — 1st</span><input class="score"></div>
+          <div class="slot" data-seed="8"><span class="seed">8</span><span class="team">Group B — 4th</span><input class="score"></div>
         </div>
         <div class="match">
           <span class="label">QF2</span>
-          <div class="slot"><span class="seed">4</span><span class="team" contenteditable>Group B — 2nd</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed">5</span><span class="team" contenteditable>Group A — 3rd</span><input class="score" contenteditable></div>
+          <div class="slot" data-seed="4"><span class="seed">4</span><span class="team">Group B — 2nd</span><input class="score"></div>
+          <div class="slot" data-seed="5"><span class="seed">5</span><span class="team">Group A — 3rd</span><input class="score"></div>
         </div>
         <div class="match">
           <span class="label">QF3</span>
-          <div class="slot"><span class="seed">2</span><span class="team" contenteditable>Group B — 1st</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed">7</span><span class="team" contenteditable>Group A — 4th</span><input class="score" contenteditable></div>
+          <div class="slot" data-seed="2"><span class="seed">2</span><span class="team">Group B — 1st</span><input class="score"></div>
+          <div class="slot" data-seed="7"><span class="seed">7</span><span class="team">Group A — 4th</span><input class="score"></div>
         </div>
         <div class="match">
           <span class="label">QF4</span>
-          <div class="slot"><span class="seed">3</span><span class="team" contenteditable>Group A — 2nd</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed">6</span><span class="team" contenteditable>Group B — 3rd</span><input class="score" contenteditable></div>
+          <div class="slot" data-seed="3"><span class="seed">3</span><span class="team">Group A — 2nd</span><input class="score"></div>
+          <div class="slot" data-seed="6"><span class="seed">6</span><span class="team">Group B — 3rd</span><input class="score"></div>
         </div>
       </div>
 
@@ -335,13 +340,13 @@
       <div class="col sf-col">
         <div class="match">
           <span class="label">SF1</span>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Winner QF1</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Winner QF2</span><input class="score" contenteditable></div>
+          <div class="slot"><span class="seed"></span><span class="team">Winner QF1</span><input class="score"></div>
+          <div class="slot"><span class="seed"></span><span class="team">Winner QF2</span><input class="score"></div>
         </div>
         <div class="match">
           <span class="label">SF2</span>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Winner QF3</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Winner QF4</span><input class="score" contenteditable></div>
+          <div class="slot"><span class="seed"></span><span class="team">Winner QF3</span><input class="score"></div>
+          <div class="slot"><span class="seed"></span><span class="team">Winner QF4</span><input class="score"></div>
         </div>
       </div>
 
@@ -357,13 +362,13 @@
       <div class="col f-col">
         <div class="match final">
           <span class="label">GRAND FINAL — BO3</span>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Winner SF1</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Winner SF2</span><input class="score" contenteditable></div>
+          <div class="slot"><span class="seed"></span><span class="team">Winner SF1</span><input class="score"></div>
+          <div class="slot"><span class="seed"></span><span class="team">Winner SF2</span><input class="score"></div>
         </div>
         <div class="match third-place">
           <span class="label">3RD PLACE (OPTIONAL) — BO1</span>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Loser SF1</span><input class="score" contenteditable></div>
-          <div class="slot"><span class="seed"></span><span class="team" contenteditable>Loser SF2</span><input class="score" contenteditable></div>
+          <div class="slot"><span class="seed"></span><span class="team">Loser SF1</span><input class="score"></div>
+          <div class="slot"><span class="seed"></span><span class="team">Loser SF2</span><input class="score"></div>
         </div>
       </div>
     </div>
@@ -406,10 +411,103 @@
     </p>
   </section>
 
-
+  <footer>
+    <b>Seeding logic:</b> overall seeds are interleaved by group finish (1=A1st, 2=B1st, 3=A2nd, 4=B2nd, 5=A3rd, 6=B3rd, 7=A4th, 8=B4th), then placed on a standard 1-8 bracket (1v8, 4v5, 2v7, 3v6). This keeps every quarterfinal a cross-group matchup so nobody replays a Day 1 opponent right away — semis and the final can still produce group-mate rematches, which is normal for seeded brackets.<br>
+    Team names, match results, and standings on this page are pulled from <code>bracket.json</code> in this repo. To update them, edit that file (via GitHub) and commit — this page re-fetches it on every load. This page itself should not be edited to change tournament data.
+  </footer>
 
 </div>
 <script>
+  // ---- Tournament data: fetched from bracket.json (edit that file, not this page) ----
+
+  function showDataError(err) {
+    const banner = document.createElement('div');
+    banner.className = 'data-error';
+    banner.textContent =
+      'Could not load tournament data from bracket.json (' + err.message + '). ' +
+      'Showing placeholder names until this is fixed.';
+    document.querySelector('.wrap').prepend(banner);
+  }
+
+  function computeStandings(data) {
+    const stats = {};
+    Object.keys(data.teams).forEach(id => { stats[id] = { w: 0, l: 0, rd: 0 }; });
+    (data.schedule || []).forEach(round => {
+      (round.matches || []).forEach(m => {
+        if (m.score1 == null || m.score2 == null) return; // not played yet
+        const s1 = stats[m.team1], s2 = stats[m.team2];
+        if (!s1 || !s2) return;
+        s1.rd += (m.score1 - m.score2);
+        s2.rd += (m.score2 - m.score1);
+        if (m.score1 > m.score2) { s1.w++; s2.l++; }
+        else if (m.score2 > m.score1) { s2.w++; s1.l++; }
+      });
+    });
+    return stats;
+  }
+
+  function rankGroup(data, stats, groupId) {
+    const ids = (data.groups[groupId] || { teamIds: [] }).teamIds;
+    return [...ids].sort((a, b) => {
+      if (stats[b].w !== stats[a].w) return stats[b].w - stats[a].w;
+      if (stats[b].rd !== stats[a].rd) return stats[b].rd - stats[a].rd;
+      return 0;
+    });
+  }
+
+  function renderTeamNames(data) {
+    document.querySelectorAll('table.standings tr[data-team-id]').forEach(row => {
+      const id = row.getAttribute('data-team-id');
+      const name = data.teams[id];
+      if (name) row.querySelector('td.team').textContent = name;
+    });
+  }
+
+  function renderStandings(stats) {
+    document.querySelectorAll('table.standings tr[data-team-id]').forEach(row => {
+      const id = row.getAttribute('data-team-id');
+      const s = stats[id];
+      if (!s) return;
+      const cells = row.querySelectorAll('td');
+      cells[2].textContent = s.w;
+      cells[3].textContent = s.l;
+      cells[4].textContent = s.rd;
+    });
+  }
+
+  function renderPlayoffSeeds(data, stats) {
+    const rankA = rankGroup(data, stats, 'A');
+    const rankB = rankGroup(data, stats, 'B');
+    // Seed order per footer note: 1=A1st,2=B1st,3=A2nd,4=B2nd,5=A3rd,6=B3rd,7=A4th,8=B4th
+    const seeds = {
+      1: rankA[0], 2: rankB[0], 3: rankA[1], 4: rankB[1],
+      5: rankA[2], 6: rankB[2], 7: rankA[3], 8: rankB[3]
+    };
+    document.querySelectorAll('.match .slot[data-seed]').forEach(slot => {
+      const seedNum = slot.getAttribute('data-seed');
+      const teamId = seeds[seedNum];
+      const name = teamId && data.teams[teamId];
+      if (name) slot.querySelector('.team').textContent = name;
+    });
+  }
+
+  async function loadTournamentData() {
+    try {
+      // cache-bust so a score update is visible on next load, not stuck behind a cached copy
+      const res = await fetch('bracket.json?t=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      renderTeamNames(data);
+      const stats = computeStandings(data);
+      renderStandings(stats);
+      renderPlayoffSeeds(data, stats);
+    } catch (err) {
+      showDataError(err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadTournamentData);
+
   // Twitch requires the embedding domain to be passed as "parent" —
   // set it dynamically to whatever host is actually serving this page.
   const twitchParent = location.hostname || 'localhost';
