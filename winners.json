@@ -1,0 +1,14 @@
+{
+  "_note": "Append-only archive. Add a new entry each time a tournament finishes — don't edit past entries. This file is never touched during a live event.",
+
+  "winners": [
+    {
+      "season": "2025",
+      "champion": "",
+      "runnerUp": "",
+      "thirdPlace": "",
+      "date": "",
+      "notes": ""
+    }
+  ]
+}

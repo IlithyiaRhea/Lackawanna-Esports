@@ -1,0 +1,92 @@
+{
+  "tournamentName": "R6 Siege Tournament — 10 Teams",
+  "teams": {
+    "A1": "Team A1",
+    "A2": "Team A2",
+    "A3": "Team A3",
+    "A4": "Team A4",
+    "A5": "Team A5",
+    "B1": "Team B1",
+    "B2": "Team B2",
+    "B3": "Team B3",
+    "B4": "Team B4",
+    "B5": "Team B5"
+  },
+
+  "groups": {
+    "A": { "teamIds": ["A1", "A2", "A3", "A4", "A5"] },
+    "B": { "teamIds": ["B1", "B2", "B3", "B4", "B5"] }
+  },
+
+  "_scoreNote": "score1/score2 are round wins for that match (used to compute W/L and round differential). Leave both null until the match is played.",
+
+  "schedule": [
+    {
+      "round": 1,
+      "byes": ["A1", "B1"],
+      "matches": [
+        { "group": "A", "team1": "A2", "team2": "A5", "score1": null, "score2": null },
+        { "group": "A", "team1": "A3", "team2": "A4", "score1": null, "score2": null },
+        { "group": "B", "team1": "B2", "team2": "B5", "score1": null, "score2": null },
+        { "group": "B", "team1": "B3", "team2": "B4", "score1": null, "score2": null }
+      ]
+    },
+    {
+      "round": 2,
+      "byes": ["A4", "B4"],
+      "matches": [
+        { "group": "A", "team1": "A1", "team2": "A5", "score1": null, "score2": null },
+        { "group": "A", "team1": "A2", "team2": "A3", "score1": null, "score2": null },
+        { "group": "B", "team1": "B1", "team2": "B5", "score1": null, "score2": null },
+        { "group": "B", "team1": "B2", "team2": "B3", "score1": null, "score2": null }
+      ]
+    },
+    {
+      "round": 3,
+      "byes": ["A2", "B2"],
+      "matches": [
+        { "group": "A", "team1": "A1", "team2": "A4", "score1": null, "score2": null },
+        { "group": "A", "team1": "A5", "team2": "A3", "score1": null, "score2": null },
+        { "group": "B", "team1": "B1", "team2": "B4", "score1": null, "score2": null },
+        { "group": "B", "team1": "B5", "team2": "B3", "score1": null, "score2": null }
+      ]
+    },
+    {
+      "round": 4,
+      "byes": ["A5", "B5"],
+      "matches": [
+        { "group": "A", "team1": "A1", "team2": "A3", "score1": null, "score2": null },
+        { "group": "A", "team1": "A4", "team2": "A2", "score1": null, "score2": null },
+        { "group": "B", "team1": "B1", "team2": "B3", "score1": null, "score2": null },
+        { "group": "B", "team1": "B4", "team2": "B2", "score1": null, "score2": null }
+      ]
+    },
+    {
+      "round": 5,
+      "byes": ["A3", "B3"],
+      "matches": [
+        { "group": "A", "team1": "A1", "team2": "A2", "score1": null, "score2": null },
+        { "group": "A", "team1": "A4", "team2": "A5", "score1": null, "score2": null },
+        { "group": "B", "team1": "B1", "team2": "B2", "score1": null, "score2": null },
+        { "group": "B", "team1": "B4", "team2": "B5", "score1": null, "score2": null }
+      ]
+    }
+  ],
+
+  "_seedNote": "Overall seed = interleaved group finish: 1=A1st,2=B1st,3=A2nd,4=B2nd,5=A3rd,6=B3rd,7=A4th,8=B4th. Resolved from group standings, not entered manually.",
+
+  "playoffs": {
+    "qf": [
+      { "id": "QF1", "seed1": 1, "seed2": 8, "score1": null, "score2": null },
+      { "id": "QF2", "seed1": 4, "seed2": 5, "score1": null, "score2": null },
+      { "id": "QF3", "seed1": 2, "seed2": 7, "score1": null, "score2": null },
+      { "id": "QF4", "seed1": 3, "seed2": 6, "score1": null, "score2": null }
+    ],
+    "sf": [
+      { "id": "SF1", "from": ["QF1", "QF2"], "score1": null, "score2": null },
+      { "id": "SF2", "from": ["QF3", "QF4"], "score1": null, "score2": null }
+    ],
+    "final": { "from": ["SF1", "SF2"], "bestOf": 3, "score1": null, "score2": null },
+    "thirdPlace": { "from": ["SF1", "SF2"], "bestOf": 1, "optional": true, "score1": null, "score2": null }
+  }
+}
