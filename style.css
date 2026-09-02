@@ -183,11 +183,11 @@ table.standings tr:last-child td{border-bottom:none;}
 .form-field{display:flex; flex-direction:column; gap:6px; margin-bottom:14px;}
 .form-field.full{grid-column:1/-1;}
 .form-field label{font-size:0.78rem; color:var(--text-dim); letter-spacing:0.03em;}
-.form-field input, .form-field textarea{
+.form-field input, .form-field textarea, .roster-grid input{
   background:var(--panel-2); border:1px solid var(--line); color:var(--text);
   padding:10px 12px; font-size:0.92rem; font-family:inherit;
 }
-.form-field input:focus, .form-field textarea:focus{outline:1px solid var(--accent); border-color:var(--accent);}
+.form-field input:focus, .form-field textarea:focus, .roster-grid input:focus{outline:1px solid var(--accent); border-color:var(--accent);}
 .roster-block{grid-column:1/-1; border-top:1px solid var(--line); padding-top:14px; margin-top:4px;}
 .roster-block > label{font-size:0.78rem; color:var(--text-dim); letter-spacing:0.03em; display:block; margin-bottom:10px;}
 .roster-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
@@ -199,5 +199,7 @@ table.standings tr:last-child td{border-bottom:none;}
 .send-to{font-size:0.78rem; color:var(--text-dim);}
 .send-to span[contenteditable]{color:var(--accent); border-bottom:1px dashed var(--line); cursor:text;}
 
+.gform-wrap{background:#f6f6f6; border:1px solid var(--line); overflow:hidden;}
+.gform-wrap iframe{display:block; border:none;}
 footer{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); color:var(--text-dim); font-size:0.82rem; line-height:1.6;}
 footer b{color:var(--text);}
